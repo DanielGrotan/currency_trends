@@ -2,7 +2,7 @@ from datetime import date
 
 import streamlit as st
 
-from api import get_currency_codes, get_currency_trend
+from currency_trends import get_currency_codes, get_currency_trend
 
 if "today" not in st.session_state:
     st.session_state.today = date.today()
