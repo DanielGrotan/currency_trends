@@ -4,6 +4,8 @@ import pandas as pd
 import streamlit as st
 from pandas import DataFrame
 
+from .utils import get_absolute_path
+
 
 @st.cache_data
 def get_currency_trend(
@@ -21,5 +23,5 @@ def get_currency_trend(
 
 @st.cache_data
 def get_currency_codes() -> list[str]:
-    with open("currency_codes.txt") as f:
+    with open(get_absolute_path(__file__, "currency_codes.txt")) as f:
         return f.read().splitlines()
